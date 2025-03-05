@@ -3,6 +3,7 @@ package com.langmuir.emaillicenseservice.controller;
 import com.langmuir.emaillicenseservice.service.LicenseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,8 +23,15 @@ public class LicenseController {
     return ResponseEntity.ok(licenseKey);
   }
 
+  @GetMapping("/validate/license")
   public ResponseEntity<Boolean> validateLicense(@RequestParam String email, @RequestParam String licenseKey) {
     boolean isValidLicense = licenseService.validateLicense(email, licenseKey);
     return ResponseEntity.ok(isValidLicense);
+  }
+
+  @GetMapping("/validate/email")
+  public ResponseEntity<Boolean> validateEmail(@RequestParam String email) {
+    boolean isValidEmail = licenseService.validateEmail(email);
+    return ResponseEntity.ok(isValidEmail);
   }
 }

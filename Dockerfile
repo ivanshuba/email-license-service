@@ -1,4 +1,4 @@
-FROM adoptopenjdk:21-jdk
+FROM openjdk:21-jdk
 WORKDIR /app
 COPY target/email-license-service-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
