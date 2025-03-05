@@ -21,3 +21,6 @@ target/
 
 ### VS Code ###
 .vscode/
+
+### Exclude .env file
+.env
