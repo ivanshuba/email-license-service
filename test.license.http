@@ -1,0 +1,36 @@
+### POST request to generate license for example email
+POST http://localhost:8080/licenses/generate
+Content-Type: text/plain
+
+name@domain.com
+
+### POST request to generate license for example email
+POST http://localhost:8080/licenses/generate
+Content-Type: text/plain
+
+user@test.com
+
+### POST request to redirect to a 'Thank you' page
+### curl -X POST -d "email=user@test.com" http://localhost:8080/licenses/complete-buy
+POST http://localhost:8080/licenses/complete-buy
+Content-Type: text/plain
+
+user@test.com
+
+
+### GET request to validate license
+GET http://localhost:8080/licenses/validate/license?email=user@test.com&licenseKey=c01405fe-a3a8-49a4-9dda-b4dce912b619
+
+### GET request to validate example email
+GET http://localhost:8080/licenses/validate/email?email=user@test.com
+
+### GET request to validate example email
+GET http://localhost:8080/licenses/validate/email?email=name@domain.com
+
+### GET request to redirect to a 'Buy license' page
+GET http://localhost:8080/licenses/buy?email=name@domain.com
+
+
+
+
+

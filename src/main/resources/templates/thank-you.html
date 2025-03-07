@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <title>Thank You</title>
+  <style>
+    /* Center the content on the screen */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full height of the viewport */
+      margin: 0;
+      font-family: Arial, sans-serif; /* Set a clean, readable font */
+    }
+
+    /* Style the message */
+    .message {
+      text-align: center;
+      font-size: 24px; /* Medium size font */
+      color: #333; /* A neutral dark color for the text */
+    }
+  </style>
+</head>
+<body>
+<div class="message">
+  <h1>Thank You for Buying FireCAM License!</h1>
+  <p>Your license has been sent to the following email address:</p>
+  <label th:text="${email}"></label>
+  <p>You can copy it directly from below and paste into the registration form.</p>
+  <label th:text="${license}"></label>
+</div>
+</body>
+</html>
