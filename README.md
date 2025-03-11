@@ -13,8 +13,9 @@ Below is an example of sending `/licenses/buy?email=user@test.com` request.
 The user is expected only to press the 'Buy' button at this stage.
 
 <div style="text-align: center;">
-<img src="https://gist.github.com/user-attachments/assets/9cffc673-e1e6-41bf-a47f-5d113685ace6" width="500;"> 
+<img src="https://github.com/user-attachments/assets/fa90a6ae-8b7a-4192-9e94-062e3f78ae7c" width="500;"> 
 </div>
+
 
 ## Redirection to the `/licenses/complete-buy` endpoint
 
@@ -29,8 +30,9 @@ Then redirection occurs to the `/licenses/thank-you` page that will contain all 
 The user is expected to copy the displayed license number and then paste it into the 'Register FireCam Plugin'
 pane inside the FireControl application.
 
+
 <div style="text-align: center;">
-<img src="https://gist.github.com/user-attachments/assets/06d512e6-a6e3-478d-b03d-4abade961aaf" width="500">
+<img src="https://github.com/user-attachments/assets/ad85a9a0-9440-4d6b-a6ec-7ce41304dfb7" width="500">
 </div>
 
 ---
@@ -107,21 +109,22 @@ For that, one must add them manually as follows.
 2. Select the application's name from the list on the left side pane
 
 <div style="text-align: center;">
-<img src="https://gist.github.com/user-attachments/assets/7cebce6d-fd45-4069-bbb9-dddc67578a5f" width="800">
+<img src="https://github.com/user-attachments/assets/d03d9c41-573b-4d30-828d-d93289d6c093" width="800">
 </div>
+
 
 ### Open `Environment Variables` sub-pane
 
 Click on the `Edit environment variables` icon
 
 <div style="text-align: center;">
-<img src="https://gist.github.com/user-attachments/assets/1b2e5c70-11d5-4d5f-a642-d83203c5419e" width="800">
+<img src="https://github.com/user-attachments/assets/67b08405-c533-46ef-b65a-c3b9f9b7cfc8" width="800">
 </div>
 
 ### Fill in the environment variables values
 
 <div style="text-align: center;">
-<img src="https://gist.github.com/user-attachments/assets/750dc47a-b98e-4420-9419-4ad605856171" width="500">
+<img src="https://github.com/user-attachments/assets/84c5a125-a368-475d-9298-45fb9e2e4c4e" width="500">
 </div>
 
 Now, when you run the application ( for example, with `./gradlew run` ), it should be able to connect to the database.
