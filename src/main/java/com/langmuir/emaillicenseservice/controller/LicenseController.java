@@ -46,15 +46,18 @@ public class LicenseController {
   }
 
   @PostMapping("/complete-buy")
-  public String completeBuy(@RequestParam("email") String email) {
+  public String completeBuy(@RequestParam("email") String email, Model model) {
     // Generate or fetch the license for the provided email address
     String licenseKey = licenseService.generateLicenseKey(email);
 
     // Send the generated license to the given email address
     licenseService.sendLicenseEmail(email, licenseKey);
 
+    model.addAttribute("email", email);
+    model.addAttribute("license", licenseKey);
+
     // Redirect to the thank-you page with the email parameter
-    return "redirect:/licenses/thank-you?license=" + licenseKey + "&email=" + email;
+    return "thank-you";
   }
 
   @GetMapping("/thank-you")
