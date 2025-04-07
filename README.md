@@ -128,3 +128,24 @@ Click on the `Edit environment variables` icon
 </div>
 
 Now, when you run the application ( for example, with `./gradlew run` ), it should be able to connect to the database.
+
+## Deploying on Digital Ocean
+
+First, generate an application JAR file. For that, run the following command from within the project's root folder:
+ 
+- `./mvnw clean && ./mvnw compile && ./mvnw package -DskipTests`
+
+Next, login into your DI account. Then:
+
+- Create Ubuntu Docker droplet
+- Login into your droplet's virtual machine
+- Create folder where the app will be located `mkdir /opt/app`
+- Copy `.env` file from the project folder into the `app` folder
+  - For example, from Windows' PowerShell terminal it would be something like `scp PATH_TO_PROJECT\.env root@YOUR.DROPLET.IP.ADDRESS:/opt/app`
+- Copy `docker-compose.yml` file from the project folder into the `app` folder
+    - For example, from Windows' PowerShell terminal it would be something like `scp PATH_TO_PROJECT\docker-compose.yml root@YOUR.DROPLET.IP.ADDRESS:/opt/app`
+- Copy `Dockerfile` file from the project folder into the `app` folder
+    - For example, from Windows' PowerShell terminal it would be something like `scp PATH_TO_PROJECT\Dockerfile root@YOUR.DROPLET.IP.ADDRESS:/opt/app`
+- Copy the generated JAR file from the project's `/target` folder into the `app` folder
+    - For example, from Windows' PowerShell terminal it would be something like `scp PATH_TO_PROJECT\target\email-license-service-0.0.1-SNAPSHOT.jar root@YOUR.DROPLET.IP.ADDRESS:/opt/app`
+- Run Docker Compose to build and start the image `docker compose --env-file .env up --build` from within the `app` folder
